@@ -11,7 +11,11 @@ import warnings
 # Suppress harmless urllib3 LibreSSL warnings on macOS
 warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
 
-DEFAULT_MODEL = "Facenet512"
+# ArcFace is substantially more tolerant of normal appearance changes (facial
+# hair, age, lighting, and camera angle) than Facenet512 for this application.
+# Its DeepFace-provided threshold remains model-specific and is not shared with
+# the other recognition models.
+DEFAULT_MODEL = "ArcFace"
 DEFAULT_DETECTOR = "opencv"
 DEFAULT_METRIC = "cosine"
 

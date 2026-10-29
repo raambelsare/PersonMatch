@@ -1,12 +1,18 @@
 # Person Match
 
 Compare two face photos from the command line to see if they are the same person.
+It uses ArcFace by default, which is more reliable than the previous model when
+the same person has changed facial hair, age, lighting, or camera angle.
 
 ## Setup
 
 ```sh
 pip install -r requirements.txt
 ```
+
+The first comparison downloads ArcFace's recognition weights once (about
+137 MB) into DeepFace's local model cache. Later comparisons use that local
+copy and do not need another download.
 
 ## How to Copy a File Path
 
